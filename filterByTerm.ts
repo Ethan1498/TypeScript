@@ -21,7 +21,7 @@ function filterByTerm(
     input: Array<Link>,
     searchTerm: string,
     lookupKey: string = "url"
-) {
+): Array<Link> {
     if (!searchTerm) throw Error("searchTerm cannot be empty");
     if (!input.length) throw Error("input cannot be empty");
     const regex = new RegExp(searchTerm, "i");
@@ -36,6 +36,4 @@ const obj3: Link = { url: "string3" };
 
 const arrOfLinks: Array<Link> = [obj1, obj2, obj3];
 
-const term: string = "java";
-  
-filterByTerm(arrOfLinks, term);
+filterByTerm(arrOfLinks, "string3");
