@@ -1,5 +1,7 @@
 interface Link {
     url: string;
+    description?: string;
+    id?: number;
 }
 
 function filterByTerm(input: Array<Link>, searchTerm: string) {
@@ -10,5 +12,13 @@ function filterByTerm(input: Array<Link>, searchTerm: string) {
       return arrayElement.url.match(regex);
     });
   }
+
+const obj1: Link = { url: "string1" };
+const obj2: Link = { url: "string2" };
+const obj3: Link = { url: "string3" };
+
+const arrOfLinks: Array<Link> = [obj1, obj2, obj3];
+
+const term: string = "java";
   
-filterByTerm([{ url: "string1" }, { url: "string2" }, { url: "string3" }], "java");
+filterByTerm(arrOfLinks, term);
